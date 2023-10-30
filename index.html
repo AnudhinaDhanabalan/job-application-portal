@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Job Application Portal</title>
     <style>
-        /* CSS styles for the job application portal */
-
+        /* Common CSS for both pages */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
             margin: 0;
             padding: 0;
         }
 
-        form {
-            background-color: #fff;
+        header {
+            background: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
             padding: 20px;
+        }
+
+        /* Homepage specific CSS */
+        .homepage {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Application form specific CSS */
+        .application-form {
+            background: #f7f7f7;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             margin: 0 auto;
+            padding: 20px;
         }
 
-        h1 {
+        .application-form h1 {
             text-align: center;
             color: #333;
         }
 
-        label {
+        .application-form label {
             font-weight: bold;
             display: block;
             margin-bottom: 5px;
             color: #555;
         }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="number"],
-        select,
-        textarea {
+        .application-form input[type="text"],
+        .application-form input[type="email"],
+        .application-form input[type="number"],
+        .application-form select,
+        .application-form textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -46,7 +67,7 @@
             font-size: 16px;
         }
 
-        input[type="file"] {
+        .application-form input[type="file"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -56,7 +77,7 @@
             background-color: #f5f5f5;
         }
 
-        input[type="submit"] {
+        .application-form input[type="submit"] {
             background-color: #007BFF;
             color: #fff;
             padding: 10px 20px;
@@ -66,53 +87,37 @@
             cursor: pointer;
         }
 
-        input[type="submit"]:hover {
+        .application-form input[type="submit"]:hover {
             background-color: #0056b3;
         }
 
-        textarea {
+        .application-form textarea {
             resize: none;
-        }
-
-        br {
-            clear: both;
         }
     </style>
 </head>
+
 <body>
-    <h1>Job Application Form</h1>
-    <form action="process_application.php" method="post">
-        <label for="job_title">Job Title:</label>
-        <input type="text" id="job_title" name="job_title" required><br><br>
+    <header>
+        <h1>Job Application Portal</h1>
+    </header>
 
-        <label for="full_name">Full Name:</label>
-        <input type="text" id="full_name" name "full_name" required><br><br>
+    <!-- Homepage -->
+    <div class="homepage">
+        <div class="container">
+            <h2>Welcome to our job application portal.</h2>
+            <p>Explore job opportunities and apply for your dream job.</p>
+            <a href="application.html">Apply Now</a>
+        </div>
+    </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="resume">Upload Resume (PDF or Word Doc):</label>
-        <input type="file" id="resume" name="resume" required><br><br>
-
-        <label for="cover_letter">Cover Letter:</label><br>
-        <textarea id="cover_letter" name="cover_letter" rows="4" cols="50" required></textarea><br><br>
-
-        <label for="experience">Years of Experience:</label>
-        <input type="number" id="experience" name="experience" required><br><br>
-
-        <label for="education">Highest Education:</label>
-        <select id="education" name="education" required>
-            <option value="high_school">High School</option>
-            <option value="associate">Associate's Degree</option>
-            <option value="bachelor">Bachelor's Degree</option>
-            <option value="master">Master's Degree</option>
-            <option value="phd">Ph.D.</option>
-        </select><br><br>
-
-        <label for="additional_info">Additional Information:</label><br>
-        <textarea id="additional_info" name="additional_info" rows="4" cols="50"></textarea><br><br>
-
-        <input type="submit" value="Submit Application">
-    </form>
+    <!-- Application form page -->
+    <div class="application-form">
+        <h1>Job Application Form</h1>
+        <form action="process_application.php" method="post">
+            <!-- Your form elements here -->
+        </form>
+    </div>
 </body>
+
 </html>
